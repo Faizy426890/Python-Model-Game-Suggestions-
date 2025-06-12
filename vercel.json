@@ -3,16 +3,17 @@
   "builds": [
     {
       "src": "api/model.py",
-      "use": "@vercel/python",
+      "use": "@vercel/python@3.9",
       "config": {
-        "runtime": "python3.9"
+        "maxLambdaSize": "50mb",
+        "includeFiles": []
       }
     }
   ],
-  "routes": [
+  "rewrites": [
     {
-      "src": "/api/(.*)",
-      "dest": "/api/model.py"
+      "source": "/api/(.*)",
+      "destination": "/api/model.py"
     }
   ]
 }
