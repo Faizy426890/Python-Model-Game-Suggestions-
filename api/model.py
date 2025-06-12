@@ -1,7 +1,8 @@
 from flask import Flask, request, jsonify
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.preprocessing import LabelEncoder
-import numpy as np 
+import numpy as np  
+import vercel_wsgi  
 import random
 
 app = Flask(__name__)
