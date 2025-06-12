@@ -481,7 +481,7 @@ def get_diverse_game_recommendations(temp, wind_speed, cloudiness, weather_main,
         else:
             return random.sample([60, 61, 35, 36, 49, 58, 62, 63, 64], num_recommendations)
 
-@app.route("api/recommend-game", methods=["POST"])
+@app.route("/api/recommend-game", methods=["POST"])
 def recommend_game():
     try:
         data = request.json
