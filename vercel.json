@@ -14,26 +14,14 @@
       }
     }
   ],
-  "routes": [
-    {
-      "src": "/api/recommend-game",
-      "dest": "/api/recommend.py",
-      "methods": ["POST"]
-    },
-    {
-      "src": "/(.*)",
-      "status": 404,
-      "dest": "/api/recommend.py"
-    }
-  ],
-  "env": {
-    "PYTHON_VERSION": "3.9",
-    "FLASK_ENV": "production"
-  },
   "rewrites": [
     {
       "source": "/api/(.*)",
       "destination": "/api/recommend.py"
     }
-  ]
+  ],
+  "env": {
+    "PYTHON_VERSION": "3.9",
+    "FLASK_ENV": "production"
+  }
 }
