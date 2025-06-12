@@ -5,12 +5,7 @@
       "src": "api/model.py",
       "use": "@vercel/python",
       "config": {
-        "maxLambdaSize": "50mb",
-        "includeFiles": [
-          "game_map.pkl",
-          "model.pkl",
-          "label_encoder.pkl"
-        ]
+        "runtime": "python3.9"
       }
     }
   ],
