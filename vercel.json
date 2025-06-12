@@ -5,7 +5,6 @@
       "src": "api/model.py",
       "use": "@vercel/python",
       "config": {
-        "runtime": "python3.9",  
         "maxLambdaSize": "50mb",
         "includeFiles": [
           "game_map.pkl",
@@ -15,10 +14,10 @@
       }
     }
   ],
-  "rewrites": [
+  "routes": [
     {
-      "source": "/api/(.*)",
-      "destination": "/api/model.py"
+      "src": "/api/(.*)",
+      "dest": "/api/model.py"
     }
   ]
 }
