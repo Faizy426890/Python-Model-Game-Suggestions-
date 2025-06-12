@@ -1,0 +1,39 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/recommend.py",
+      "use": "@vercel/python",
+      "config": {
+        "maxLambdaSize": "50mb",
+        "includeFiles": [
+          "game_map.pkl",
+          "model.pkl",
+          "label_encoder.pkl"
+        ]
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/recommend-game",
+      "dest": "/api/recommend.py",
+      "methods": ["POST"]
+    },
+    {
+      "src": "/(.*)",
+      "status": 404,
+      "dest": "/api/recommend.py"
+    }
+  ],
+  "env": {
+    "PYTHON_VERSION": "3.9",
+    "FLASK_ENV": "production"
+  },
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/recommend.py"
+    }
+  ]
+}
